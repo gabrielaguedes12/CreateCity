@@ -1,4 +1,15 @@
 ﻿@page
-@model CreateCity.Pages.CityManager.CreateCityModel
-@{
+@model TourismApp.Pages.CityManager.CreateCityModel
+
+<h2>Cadastrar Cidade Turística</h2>
+
+<form method="post">
+    <label>Nome da cidade:</label>
+    <input asp-for="CityName" />
+    <button type="submit">Enviar</button>
+</form>
+
+@if (!string.IsNullOrEmpty(Model.CityName))
+{
+    <p>Cidade cadastrada: <strong>@Model.CityName</strong></p>
 }

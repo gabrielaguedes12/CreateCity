@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace CreateCity.Pages
+namespace TourismApp.Pages
 {
     public class IndexModel : PageModel
     {
