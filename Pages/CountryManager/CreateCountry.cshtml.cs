@@ -24,6 +24,16 @@ namespace TourismApp.Pages.CountryManager
 
         public void OnPost()
         {
+            if (Input.CountryName != null && Input.CountryCode != null)
+            {
+                if (Input.CountryName[0] != Input.CountryCode[0])
+                {
+                    ModelState.AddModelError(
+                    "Input.CountryCode",
+                    "O código do país deve começar com a mesma letra do nome.");
+                }
+            }
+
             if (!ModelState.IsValid)
                 return;
 
@@ -33,11 +43,11 @@ namespace TourismApp.Pages.CountryManager
                 CountryCode = Input.CountryCode
             };
         }
-    }
 
-    public class Country
-    {
-        public string? CountryName { get; set; }
-        public string? CountryCode { get; set; }
+        public class Country
+        {
+            public string? CountryName { get; set; }
+            public string? CountryCode { get; set; }
+        }
     }
 }

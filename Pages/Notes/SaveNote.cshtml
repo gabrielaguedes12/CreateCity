@@ -1,4 +1,23 @@
 ﻿@page
-@model CreateCity.Pages.Notes.SaveNoteModel
-@{
+@model TourismApp.Pages.Notes.SaveNoteModel
+
+<h2>Salvar nota</h2>
+
+<form method="post">
+
+<textarea asp-for="Input.Content"></textarea>
+
+    <br><br>
+
+    <button type="submit">Salvar</button>
+
+</form>
+
+@if (Model.FilePath != null)
+{
+    <p>Arquivo salvo!</p>
+
+    <a href="@Model.FilePath" download>
+        Baixar arquivo
+    </a>
 }

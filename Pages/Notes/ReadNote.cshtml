@@ -1,4 +1,22 @@
 ﻿@page
-@model CreateCity.Pages.Notes.ReadNotesModel
-@{
+@model TourismApp.Pages.Notes.ReadNoteModel
+
+<h2>Notas salvas</h2>
+
+<ul>
+    @foreach (var file in Model.Files)
+    {
+        <li>
+            <a asp-page="ReadNote" asp-route-file="@file">
+                @file
+            </a>
+        </li>
+    }
+</ul>
+
+@if (Model.Content != null)
+{
+    <h3>Conteúdo</h3>
+
+    <pre>@Model.Content</pre>
 }

@@ -1,4 +1,15 @@
 ﻿@page
-@model CreateCity.Pages.CityManager.CityListModel
-@{
-}
+@model TourismApp.Pages.CityManager.CityListModel
+
+<h2>Lista de cidades</h2>
+
+<ul>
+    @foreach (var city in Model.Cities)
+    {
+        <li>
+            <a asp-page="CityDetails" asp-route-cityName="@city">
+                Ver detalhes de @city
+            </a>
+        </li>
+    }
+</ul>
