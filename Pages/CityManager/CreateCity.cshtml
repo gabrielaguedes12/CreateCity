@@ -4,12 +4,20 @@
 <h2>Cadastrar Cidade Turística</h2>
 
 <form method="post">
+
     <label>Nome da cidade:</label>
-    <input asp-for="CityName" />
+    <input asp-for="Input.CityName" />
+
+    <span asp-validation-for="Input.CityName"></span>
+
     <button type="submit">Enviar</button>
+
 </form>
 
-@if (!string.IsNullOrEmpty(Model.CityName))
+@if (Model.Message != null)
 {
-    <p>Cidade cadastrada: <strong>@Model.CityName</strong></p>
+    <p><strong>@Model.Message</strong></p>
+}
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
 }
