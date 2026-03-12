@@ -1,4 +1,6 @@
-﻿@page
-@model CreateCity.Pages.CityManager.CityDetailsModel
-@{
-}
+﻿@page "{cityName}"
+@model TourismApp.Pages.CityManager.CityDetailsModel
+
+<h2>Detalhes da cidade</h2>
+
+<p>Você está vendo detalhes de: <strong>@Model.CityName</strong></p>
